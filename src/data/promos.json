@@ -1,0 +1,191 @@
+[
+  {
+    "id": "promo-atto-3-2025",
+    "name": "BYD ATTO 3",
+    "slug": "byd-atto-3",
+    "category": "SUV",
+    "tagline": "Premium Electric SUV",
+    "price": "Rp 549.000.000",
+    "priceStart": 549000000,
+    "originalPrice": "Rp 639.000.000",
+    "discount": "Rp 90.000.000",
+    "discountPercent": 14,
+    "promoTitle": "Promo Spesial Tahun Baru 2025",
+    "promoDescription": "Dapatkan diskon hingga Rp 90 juta untuk pembelian BYD ATTO 3! Promo terbatas hanya sampai akhir Maret 2025.",
+    "promoEndDate": "2025-03-31",
+    "promoTerms": [
+      "Berlaku untuk pembelian unit baru",
+      "Promo tidak dapat digabung dengan promo lain",
+      "Stock terbatas",
+      "Syarat dan ketentuan berlaku"
+    ],
+    "image": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80",
+      "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80",
+      "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80"
+    ],
+    "description": "BYD ATTO 3 adalah SUV listrik yang sempurna untuk keluarga Indonesia modern. Dengan desain sporty yang memikat, ruang kabin luas, dan teknologi Blade Battery, ATTO 3 memberikan kenyamanan dan keamanan untuk setiap perjalanan keluarga Anda.",
+    "specs": {
+      "battery": "60.48 kWh Blade Battery",
+      "range": "480 km",
+      "power": "150 kW (201 HP)",
+      "acceleration": "0-100 km/h dalam 7.3 detik",
+      "charging": "29 menit (10-80%)",
+      "seats": "5 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Blade Battery Technology - Teknologi baterai teraman di kelasnya",
+      "12.8 inch Rotating Touchscreen",
+      "Dirac Sound System - Kualitas audio premium",
+      "Sporty & Spacious Interior - Desain interior unik dan luas",
+      "Advanced Safety Features - Fitur keselamatan lengkap",
+      "Smart Voice Control - Kontrol suara pintar",
+      "Panoramic Sunroof - Atap kaca panoramik",
+      "Electric Tailgate - Bagasi belakang otomatis"
+    ],
+    "colors": [
+      "Surf Blue",
+      "Boulder Grey",
+      "Parkour Red",
+      "Ski White"
+    ],
+    "variants": [
+      {
+        "name": "Standard Range",
+        "price": "Rp 549.000.000"
+      },
+      {
+        "name": "Extended Range",
+        "price": "Rp 639.000.000"
+      }
+    ]
+  },
+  {
+    "id": "promo-dolphin-2025",
+    "name": "BYD DOLPHIN",
+    "slug": "byd-dolphin",
+    "category": "Hatchback",
+    "tagline": "Compact Electric Hatchback",
+    "price": "Rp 349.800.000",
+    "priceStart": 349800000,
+    "originalPrice": "Rp 389.800.000",
+    "discount": "Rp 40.000.000",
+    "discountPercent": 10,
+    "promoTitle": "Promo Cashback & Free Charging",
+    "promoDescription": "Hemat Rp 40 juta + Free Home Charging Installation senilai Rp 15 juta untuk BYD DOLPHIN! Buruan sebelum kehabisan stock.",
+    "promoEndDate": "2025-04-30",
+    "promoTerms": [
+      "Berlaku untuk pembelian unit baru",
+      "Free instalasi charging di rumah senilai Rp 15 juta",
+      "Promo tidak dapat digabung dengan promo lain",
+      "Stock terbatas untuk 50 unit pertama"
+    ],
+    "image": "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80"
+    ],
+    "description": "BYD DOLPHIN adalah hatchback listrik kompak yang sempurna untuk mobilitas urban. Dengan desain cute & modern, teknologi canggih, dan efisiensi tinggi, DOLPHIN adalah pilihan cerdas untuk gaya hidup perkotaan yang dinamis dan ramah lingkungan.",
+    "specs": {
+      "battery": "44.9 kWh Blade Battery",
+      "range": "340 km",
+      "power": "70 kW (94 HP)",
+      "acceleration": "0-50 km/h dalam 3.9 detik",
+      "charging": "30 menit (10-80%)",
+      "seats": "5 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Blade Battery Technology - Baterai aman dan efisien",
+      "Compact & Agile Design - Desain kompak untuk kota",
+      "5-inch Digital Instrument Cluster",
+      "12.8-inch Rotating Central Display",
+      "Smartphone App Integration",
+      "LED Headlamps & Tail Lamps",
+      "Dual Airbags & ABS",
+      "Low Running Cost - Biaya operasional sangat rendah"
+    ],
+    "colors": [
+      "Surf Blue",
+      "Ski White",
+      "Pebble Grey",
+      "Fashion Pink"
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": "Rp 349.800.000"
+      },
+      {
+        "name": "Premium",
+        "price": "Rp 449.000.000"
+      }
+    ]
+  },
+  {
+    "id": "promo-seal-2025",
+    "name": "BYD SEAL",
+    "slug": "byd-seal",
+    "category": "Sedan",
+    "tagline": "Electric Performance Sedan",
+    "price": "Rp 669.000.000",
+    "priceStart": 669000000,
+    "originalPrice": "Rp 719.000.000",
+    "discount": "Rp 50.000.000",
+    "discountPercent": 7,
+    "promoTitle": "Promo Pre-Order BYD SEAL",
+    "promoDescription": "Pre-order sekarang dan dapatkan special price! Hemat Rp 50 juta + bonus aksesoris premium senilai Rp 25 juta.",
+    "promoEndDate": "2025-02-28",
+    "promoTerms": [
+      "Berlaku untuk pre-order unit baru",
+      "Bonus aksesoris premium senilai Rp 25 juta",
+      "DP mulai 20%",
+      "Promo terbatas untuk 30 unit pertama"
+    ],
+    "image": "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80"
+    ],
+    "description": "BYD SEAL adalah sedan listrik premium dengan performa tinggi yang menggabungkan teknologi canggih, desain aerodinamis, dan kenyamanan berkendara kelas dunia. Dilengkapi dengan Blade Battery yang aman dan tahan lama, SEAL menawarkan pengalaman berkendara yang tak terlupakan.",
+    "specs": {
+      "battery": "82.5 kWh Blade Battery",
+      "range": "520 km",
+      "power": "230 kW (308 HP)",
+      "acceleration": "0-100 km/h dalam 5.9 detik",
+      "charging": "30 menit (10-80%)",
+      "seats": "5 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Blade Battery Technology - Keamanan dan daya tahan maksimal",
+      "Cell to Body Technology - Struktur lebih kuat dan ringan",
+      "Panoramic Sunroof - Atap kaca luas untuk pengalaman premium",
+      "Advanced Driver Assistance System (ADAS)",
+      "12.8 inch Rotating Display - Layar putar untuk hiburan optimal",
+      "Premium Nappa Leather Interior",
+      "Heat Pump System - Efisiensi energi tinggi",
+      "Dynaudio Premium Sound System"
+    ],
+    "colors": [
+      "Cosmos Black",
+      "Atlantis Grey",
+      "Ski White",
+      "Aurora Blue"
+    ],
+    "variants": [
+      {
+        "name": "Dynamic",
+        "price": "Rp 669.000.000"
+      },
+      {
+        "name": "Premium",
+        "price": "Rp 839.000.000"
+      }
+    ]
+  }
+]

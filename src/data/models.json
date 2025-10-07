@@ -1,0 +1,308 @@
+[
+  {
+    "id": "byd-seal",
+    "name": "BYD SEAL",
+    "slug": "byd-seal",
+    "category": "Sedan",
+    "tagline": "Electric Performance Sedan",
+    "price": "Rp 719.000.000",
+    "priceStart": 719000000,
+    "image": "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80"
+    ],
+    "description": "BYD SEAL adalah sedan listrik premium dengan performa tinggi yang menggabungkan teknologi canggih, desain aerodinamis, dan kenyamanan berkendara kelas dunia. Dilengkapi dengan Blade Battery yang aman dan tahan lama, SEAL menawarkan pengalaman berkendara yang tak terlupakan.",
+    "specs": {
+      "battery": "82.5 kWh Blade Battery",
+      "range": "520 km",
+      "power": "230 kW (308 HP)",
+      "acceleration": "0-100 km/h dalam 5.9 detik",
+      "charging": "30 menit (10-80%)",
+      "seats": "5 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Blade Battery Technology - Keamanan dan daya tahan maksimal",
+      "Cell to Body Technology - Struktur lebih kuat dan ringan",
+      "Panoramic Sunroof - Atap kaca luas untuk pengalaman premium",
+      "Advanced Driver Assistance System (ADAS)",
+      "12.8 inch Rotating Display - Layar putar untuk hiburan optimal",
+      "Premium Nappa Leather Interior",
+      "Heat Pump System - Efisiensi energi tinggi",
+      "Dynaudio Premium Sound System"
+    ],
+    "colors": [
+      "Cosmos Black",
+      "Atlantis Grey",
+      "Ski White",
+      "Aurora Blue"
+    ],
+    "variants": [
+      {
+        "name": "Dynamic",
+        "price": "Rp 719.000.000"
+      },
+      {
+        "name": "Premium",
+        "price": "Rp 839.000.000"
+      }
+    ]
+  },
+  {
+    "id": "byd-atto-3",
+    "name": "BYD ATTO 3",
+    "slug": "byd-atto-3",
+    "category": "SUV",
+    "tagline": "Premium Electric SUV",
+    "price": "Rp 549.000.000",
+    "priceStart": 549000000,
+    "image": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80",
+      "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80",
+      "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80"
+    ],
+    "description": "BYD ATTO 3 adalah SUV listrik yang sempurna untuk keluarga Indonesia modern. Dengan desain sporty yang memikat, ruang kabin luas, dan teknologi Blade Battery, ATTO 3 memberikan kenyamanan dan keamanan untuk setiap perjalanan keluarga Anda.",
+    "specs": {
+      "battery": "60.48 kWh Blade Battery",
+      "range": "480 km",
+      "power": "150 kW (201 HP)",
+      "acceleration": "0-100 km/h dalam 7.3 detik",
+      "charging": "29 menit (10-80%)",
+      "seats": "5 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Blade Battery Technology - Teknologi baterai teraman di kelasnya",
+      "12.8 inch Rotating Touchscreen",
+      "Dirac Sound System - Kualitas audio premium",
+      "Sporty & Spacious Interior - Desain interior unik dan luas",
+      "Advanced Safety Features - Fitur keselamatan lengkap",
+      "Smart Voice Control - Kontrol suara pintar",
+      "Panoramic Sunroof - Atap kaca panoramik",
+      "Electric Tailgate - Bagasi belakang otomatis"
+    ],
+    "colors": [
+      "Surf Blue",
+      "Boulder Grey",
+      "Parkour Red",
+      "Ski White"
+    ],
+    "variants": [
+      {
+        "name": "Standard Range",
+        "price": "Rp 549.000.000"
+      },
+      {
+        "name": "Extended Range",
+        "price": "Rp 639.000.000"
+      }
+    ]
+  },
+  {
+    "id": "byd-dolphin",
+    "name": "BYD DOLPHIN",
+    "slug": "byd-dolphin",
+    "category": "Hatchback",
+    "tagline": "Compact Electric Hatchback",
+    "price": "Rp 389.800.000",
+    "priceStart": 389800000,
+    "image": "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80",
+      "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80"
+    ],
+    "description": "BYD DOLPHIN adalah hatchback listrik kompak yang sempurna untuk mobilitas urban. Dengan desain cute & modern, teknologi canggih, dan efisiensi tinggi, DOLPHIN adalah pilihan cerdas untuk gaya hidup perkotaan yang dinamis dan ramah lingkungan.",
+    "specs": {
+      "battery": "44.9 kWh Blade Battery",
+      "range": "340 km",
+      "power": "70 kW (94 HP)",
+      "acceleration": "0-50 km/h dalam 3.9 detik",
+      "charging": "30 menit (10-80%)",
+      "seats": "5 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Blade Battery Technology - Baterai aman dan efisien",
+      "Compact & Agile Design - Desain kompak untuk kota",
+      "5-inch Digital Instrument Cluster",
+      "12.8-inch Rotating Central Display",
+      "Smartphone App Integration",
+      "LED Headlamps & Tail Lamps",
+      "Dual Airbags & ABS",
+      "Low Running Cost - Biaya operasional sangat rendah"
+    ],
+    "colors": [
+      "Surf Blue",
+      "Ski White",
+      "Pebble Grey",
+      "Fashion Pink"
+    ],
+    "variants": [
+      {
+        "name": "Standard",
+        "price": "Rp 389.800.000"
+      },
+      {
+        "name": "Premium",
+        "price": "Rp 449.000.000"
+      }
+    ]
+  },
+  {
+    "id": "byd-m6",
+    "name": "BYD M6",
+    "slug": "byd-m6",
+    "category": "MPV",
+    "tagline": "Electric Family MPV",
+    "price": "Rp 629.000.000",
+    "priceStart": 629000000,
+    "image": "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1920&q=80",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1920&q=80",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1920&q=80"
+    ],
+    "description": "BYD M6 adalah MPV listrik 7-seater yang dirancang khusus untuk keluarga besar Indonesia. Dengan kabin lega, teknologi Blade Battery, dan fitur keselamatan lengkap, M6 memberikan kenyamanan maksimal untuk perjalanan keluarga jarak jauh.",
+    "specs": {
+      "battery": "71.8 kWh Blade Battery",
+      "range": "430 km",
+      "power": "150 kW (201 HP)",
+      "acceleration": "0-100 km/h dalam 8.9 detik",
+      "charging": "30 menit (10-80%)",
+      "seats": "7 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "7-Seater Spacious Cabin - Kabin luas untuk 7 penumpang",
+      "Blade Battery Technology",
+      "Captain Seats di Baris Kedua",
+      "15.6-inch Rotating Touchscreen",
+      "Third Row Electric Fold",
+      "Tri-Zone Automatic Climate Control",
+      "Advanced Safety Suite",
+      "Premium Interior Materials"
+    ],
+    "colors": [
+      "Cosmos Black",
+      "Pearl White",
+      "Silver Metallic",
+      "Deep Blue"
+    ],
+    "variants": [
+      {
+        "name": "Comfort",
+        "price": "Rp 629.000.000"
+      },
+      {
+        "name": "Luxury",
+        "price": "Rp 749.000.000"
+      }
+    ]
+  },
+  {
+    "id": "byd-tang",
+    "name": "BYD TANG",
+    "slug": "byd-tang",
+    "category": "SUV",
+    "tagline": "Luxury Electric SUV",
+    "price": "Rp 899.000.000",
+    "priceStart": 899000000,
+    "image": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80"
+    ],
+    "description": "BYD TANG adalah SUV listrik mewah dengan performa luar biasa dan teknologi terdepan. Dengan desain premium, interior super luas, dan sistem All-Wheel Drive, TANG memberikan pengalaman berkendara yang tak tertandingi untuk segmen SUV premium.",
+    "specs": {
+      "battery": "86.4 kWh Blade Battery",
+      "range": "505 km",
+      "power": "380 kW (509 HP)",
+      "acceleration": "0-100 km/h dalam 4.4 detik",
+      "charging": "30 menit (10-80%)",
+      "seats": "7 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Dual Motor All-Wheel Drive - Performa maksimal di segala kondisi",
+      "7-Seater Luxury Interior - Interior mewah untuk 7 penumpang",
+      "Advanced DiPilot ADAS - Sistem bantuan mengemudi otomatis",
+      "15.6-inch Adaptive Rotating Display",
+      "Panoramic Sunroof with Shade",
+      "12-Speaker Dynaudio Sound System",
+      "Ventilated & Heated Front Seats",
+      "Wireless Phone Charging"
+    ],
+    "colors": [
+      "Cosmos Black",
+      "Pearl White",
+      "Champagne Gold",
+      "Deep Ocean Blue"
+    ],
+    "variants": [
+      {
+        "name": "Luxury",
+        "price": "Rp 899.000.000"
+      },
+      {
+        "name": "Signature",
+        "price": "Rp 1.099.000.000"
+      }
+    ]
+  },
+  {
+    "id": "byd-han",
+    "name": "BYD HAN",
+    "slug": "byd-han",
+    "category": "Sedan",
+    "tagline": "Flagship Electric Sedan",
+    "price": "Rp 979.000.000",
+    "priceStart": 979000000,
+    "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80",
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80"
+    ],
+    "description": "BYD HAN adalah sedan flagship dengan desain elegan dan teknologi canggih yang memadukan kemewahan dengan performa tinggi. Dilengkapi dengan Blade Battery dan sistem keselamatan terlengkap, HAN adalah simbol prestise untuk eksekutif modern.",
+    "specs": {
+      "battery": "85.4 kWh Blade Battery",
+      "range": "605 km",
+      "power": "380 kW (509 HP)",
+      "acceleration": "0-100 km/h dalam 3.9 detik",
+      "charging": "25 menit (10-80%)",
+      "seats": "5 Penumpang",
+      "warranty": "8 tahun / 150.000 km (Baterai)"
+    },
+    "features": [
+      "Dual Motor AWD - Akselerasi super cepat",
+      "Dragon Face Design - Desain eksklusif dan mewah",
+      "DiPilot Intelligent Driving System",
+      "15.6-inch 4K Ultra HD Display",
+      "Premium Nappa Leather with Massage Function",
+      "10-Speaker Infinity Sound System",
+      "Full LED Adaptive Headlights",
+      "Automatic Parking Assist"
+    ],
+    "colors": [
+      "Aurora Blue",
+      "Cosmos Black",
+      "Atlantis Grey",
+      "Pearl White"
+    ],
+    "variants": [
+      {
+        "name": "EV Premium",
+        "price": "Rp 979.000.000"
+      },
+      {
+        "name": "EV Signature",
+        "price": "Rp 1.198.000.000"
+      }
+    ]
+  }
+]

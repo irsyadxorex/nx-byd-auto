@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const hanson = localFont({
+  src: "../../public/assets/fonts/Hanson-Bold.ttf",
+  variable: "--font-hanson",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`min-h-screen ${inter.variable} ${hanson.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <main className="w-full">
+          {children}
+        </main>
+        <Footer />
+        <FloatingButtons />
       </body>
     </html>
   );
