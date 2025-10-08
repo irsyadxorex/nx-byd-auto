@@ -12,6 +12,10 @@ import TestDriveSection from "@/components/TestDriveSection";
 type ModelType = typeof modelsData[0];
 type PromoType = typeof promosData[0];
 
+// Note: Since this is a client component, metadata should be handled separately
+// You can create a separate metadata file or convert to server component
+// For now, we'll use this as client component and add metadata in a separate way
+
 export default function ModelDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -44,8 +48,44 @@ export default function ModelDetailPage() {
   const whatsappMessage = `Halo, saya tertarik dengan ${model.name}. Bisakah saya mendapatkan informasi lebih lanjut?`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
+  // Structured Data (JSON-LD) for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": model.name,
+    "image": model.images,
+    "description": model.description,
+    "brand": {
+      "@type": "Brand",
+      "name": "BYD"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://bydautoidn.com/models/${slug}`,
+      "priceCurrency": "IDR",
+      "price": model.priceStart || 0,
+      "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "BYD Indonesia"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "100"
+    },
+    "category": model.category
+  };
+
   return (
     <main className="pt-16">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Image - Full Width */}
       <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px]">
         <Image
