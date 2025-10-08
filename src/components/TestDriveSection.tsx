@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function TestDriveSection() {
   return (
-    <section className="py-12 sm:py-16 bg-white " id="test-drive">
+    <section className="pt-20 pb-10 bg-white " id="test-drive">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 md:order-1">

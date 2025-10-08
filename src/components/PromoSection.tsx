@@ -4,7 +4,7 @@ import promosData from "@/data/promos.json";
 
 export default function PromoSection() {
   return (
-    <section id="promo" className="py-12 sm:py-16 bg-white ">
+    <section id="promo" className="pt-20 pb-10 bg-white ">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>

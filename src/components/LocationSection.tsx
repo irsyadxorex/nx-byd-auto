@@ -2,7 +2,7 @@ import { MapPin, Phone, Clock } from "lucide-react";
 
 export default function LocationSection() {
   return (
-    <section className="py-12 sm:py-16">
+    <section id="location" className="pt-20 pb-10">
       {/* Google Maps - Full Width */}
       <div className="w-full h-[300px] sm:h-[400px] mb-8 sm:mb-12">
         <iframe

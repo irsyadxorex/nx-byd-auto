@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { navLinks } from "@/data/navLinks";
 // import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
@@ -23,14 +24,6 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: "Tentang Kami", href: "#about" },
-    { name: "Model", href: "#models" },
-    { name: "Promo", href: "#promo" },
-    { name: "Test Drive", href: "#test-drive" },
-    { name: "Lokasi", href: "#location" },
-  ];
 
   return (
     <header
@@ -56,15 +49,15 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                href={isDetailPage ? `/${link.href}` : link.href}
                 className={`font-medium transition-colors duration-300 hover:text-rose-700 ${
                   isScrolled || isDetailPage ? "text-neutral-900 " : "text-white"
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -121,9 +114,9 @@ export default function Header() {
         >
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                href={isDetailPage ? `/${link.href}` : link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
                   isScrolled || isDetailPage
@@ -132,7 +125,7 @@ export default function Header() {
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <a
               href="https://wa.me/6281234567890"

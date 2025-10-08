@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
   const maxSlide = testimonialsData.length - slidesPerView;
 
   return (
-    <section className="py-12 sm:py-16 bg-neutral-900 text-white">
+    <section className="pt-20 pb-10 bg-neutral-900 text-white">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <p className="text-rose-700 text-sm font-semibold tracking-wider uppercase mb-2">
           Costumer Story

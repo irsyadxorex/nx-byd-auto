@@ -4,7 +4,7 @@ import modelsData from "@/data/models.json";
 
 export default function AllModelsSection() {
   return (
-    <section id="models" className="py-12 sm:py-16 bg-white ">
+    <section id="models" className="pt-20 pb-10 bg-white ">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>

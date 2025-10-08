@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
 import PromoSection from "@/components/PromoSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import AllModelsSection from "@/components/AllModelsSection";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <AboutSection />
       <PromoSection />
       <FeaturesSection />
       <AllModelsSection />

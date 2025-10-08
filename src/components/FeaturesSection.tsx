@@ -29,7 +29,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="py-12 sm:py-16 bg-gray-50 ">
+    <section id="features" className="pt-20 pb-10 bg-gray-50 ">
       <div className="container mx-auto text-center px-6 sm:px-8 lg:px-12">
         <p className="text-rose-700 text-sm font-semibold tracking-wider uppercase mb-2">Superiority</p>
         <h2 className="section-title mb-4 px-4 text-neutral-900 ">Kenapa Harus Pilih BYD?</h2>

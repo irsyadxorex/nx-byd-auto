@@ -1,0 +1,9 @@
+services:
+  bydauto:
+    build: .
+    container_name: bydauto
+    restart: unless-stopped
+    ports:
+      - "4002:4002"
+    environment:
+      - NODE_ENV=production

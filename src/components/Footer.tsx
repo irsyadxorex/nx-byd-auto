@@ -1,8 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { navLinks } from "@/data/navLinks";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isDetailPage = pathname !== "/";
   return (
     <footer className="bg-neutral-900 text-white py-10 sm:py-12 px-4">
       <div className="container mx-auto">
@@ -27,21 +33,16 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-3 sm:mb-4 text-sm sm:text-base">Informasi</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">Tentang Kami</a>
-              </li>
-              <li>
-                <a href="#models" className="hover:text-white transition-colors">Model</a>
-              </li>
-              <li>
-                <a href="#promo" className="hover:text-white transition-colors">Promo</a>
-              </li>
-              <li>
-                <a href="#test-drive" className="hover:text-white transition-colors">Test Drive</a>
-              </li>
-              <li>
-                <a href="#location" className="hover:text-white transition-colors">Lokasi</a>
-              </li>
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={isDetailPage ? `/${link.href}` : link.href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
