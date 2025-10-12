@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { contactConfig, getWhatsAppUrl } from "@/config/contact";
 
 const slides = [
   {
@@ -10,21 +11,21 @@ const slides = [
     title: "BYD SEAL",
     subtitle: "Electric Performance Sedan",
     description: "Performa luar biasa dengan teknologi blade battery",
-    image: "https://images.unsplash.com/photo-1617654112368-307921291f42?w=1920&q=80",
+    image: "https://www.byd.com/content/dam/byd-site/id/home/section-seal.jpg",
   },
   {
     id: 2,
     title: "BYD ATTO 3",
     subtitle: "Premium Electric SUV",
     description: "Kenyamanan maksimal untuk keluarga Indonesia",
-    image: "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80",
+    image: "https://www.byd.com/content/dam/byd-site/id/home/section-atto3-c.jpg",
   },
   {
     id: 3,
     title: "BYD DOLPHIN",
     subtitle: "Compact Electric Hatchback",
     description: "Mobilitas urban yang efisien dan stylish",
-    image: "https://images.unsplash.com/photo-1617704548623-340376564e68?w=1920&q=80",
+    image: "https://www.byd.com/content/dam/byd-site/id/home/section-dolphin-2.jpg",
   },
 ];
 
@@ -104,7 +105,7 @@ export default function Hero() {
                   {/* CTA Button */}
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <a
-                      href="https://wa.me/6281234567890"
+                      href={getWhatsAppUrl(contactConfig.whatsappMessages.general)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-600 rounded-full text-white text-base md:text-lg font-semibold hover:bg-green-700 transition-all duration-300 hover:scale-105 hover:shadow-xl"

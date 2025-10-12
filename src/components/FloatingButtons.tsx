@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
+import { contactConfig, getWhatsAppUrl } from "@/config/contact";
 
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -41,7 +42,7 @@ export default function FloatingButtons() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/6281234567890"
+        href={getWhatsAppUrl(contactConfig.whatsappMessages.general)}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"

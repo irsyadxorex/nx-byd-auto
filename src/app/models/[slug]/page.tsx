@@ -4,13 +4,12 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Check, Phone } from "lucide-react";
-import modelsData from "@/data/models.json";
-import promosData from "@/data/promos.json";
+import { Check, Phone, Battery, Zap, Gauge, Award } from "lucide-react";
+import productsData from "@/data/products.json";
 import TestDriveSection from "@/components/TestDriveSection";
+import { contactConfig, getWhatsAppUrl } from "@/config/contact";
 
-type ModelType = typeof modelsData[0];
-type PromoType = typeof promosData[0];
+type ProductType = typeof productsData[0];
 
 // Note: Since this is a client component, metadata should be handled separately
 // You can create a separate metadata file or convert to server component
@@ -20,13 +19,12 @@ export default function ModelDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
 
-  // Find model from both models and promos data
-  const allProducts = [...modelsData, ...promosData];
-  const model = allProducts.find((m) => m.slug === slug);
+  // Find product from products data
+  const product = productsData.find((p) => p.slug === slug);
 
-  const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedVariant, setSelectedVariant] = useState(0);
 
-  if (!model) {
+  if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -39,22 +37,22 @@ export default function ModelDetailPage() {
     );
   }
 
-  // Check if it's a promo item with type guard
-  const isPromo = (item: ModelType | PromoType): item is PromoType => {
-    return "discount" in item;
-  };
+  const currentVariant = product.varian[selectedVariant];
 
-  const whatsappNumber = "6281234567890"; // Change to your WhatsApp number
-  const whatsappMessage = `Halo, saya tertarik dengan ${model.name}. Bisakah saya mendapatkan informasi lebih lanjut?`;
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  // Generate WhatsApp URL using config
+  const whatsappMessage = contactConfig.whatsappMessages.productInquiry(
+    product.nama,
+    currentVariant.tipe
+  );
+  const whatsappUrl = getWhatsAppUrl(whatsappMessage);
 
   // Structured Data (JSON-LD) for SEO
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": model.name,
-    "image": model.images,
-    "description": model.description,
+    "name": product.nama,
+    "image": [product.gambar.mobil],
+    "description": product.deskripsi,
     "brand": {
       "@type": "Brand",
       "name": "BYD"
@@ -63,7 +61,7 @@ export default function ModelDetailPage() {
       "@type": "Offer",
       "url": `https://bydautoidn.com/models/${slug}`,
       "priceCurrency": "IDR",
-      "price": model.priceStart || 0,
+      "price": product.hargaMulai,
       "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -76,7 +74,7 @@ export default function ModelDetailPage() {
       "ratingValue": "4.8",
       "reviewCount": "100"
     },
-    "category": model.category
+    "category": product.kategori
   };
 
   return (
@@ -88,98 +86,103 @@ export default function ModelDetailPage() {
       />
       {/* Hero Image - Full Width */}
       <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px]">
-        <Image
-          src={model.image}
-          alt={model.name}
-          fill
-          className="object-cover"
-          priority
-        />
+        <div className="relative w-full h-full bg-gray-50">
+          <Image
+            src={product.gambar.mobil}
+            alt={product.nama}
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
           <div className="container mx-auto">
             <span className="inline-block px-3 py-1 bg-rose-700 text-white text-xs font-semibold rounded-full mb-3">
-              {model.category}
+              {product.kategori}
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
-              {model.name}
+              {product.nama}
             </h1>
-            <p className="text-lg sm:text-xl text-gray-200">{model.tagline}</p>
+            <p className="text-lg sm:text-xl text-gray-200">{product.tagline}</p>
           </div>
         </div>
       </section>
 
-      {/* Image Gallery & Description */}
+      {/* Product Info & Variants */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left: Image Gallery */}
+            {/* Left: Product Image */}
             <div>
-              <div className="relative h-64 sm:h-80 md:h-96 mb-4 rounded-lg overflow-hidden">
+              <div className="relative h-64 sm:h-80 md:h-96 mb-4 rounded-lg overflow-hidden bg-gray-50">
                 <Image
-                  src={model.images[selectedImage]}
-                  alt={`${model.name} - Image ${selectedImage + 1}`}
+                  src={product.gambar.mobil}
+                  alt={product.nama}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
-              <div className="grid grid-cols-3 gap-3">
-                {model.images.map((img, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImage(index)}
-                    className={`relative h-20 sm:h-24 rounded-lg overflow-hidden border-2 transition-all ${
-                      selectedImage === index
-                        ? "border-rose-700 scale-105"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
-                  >
+              {product.gambar.logo && (
+                <div className="flex justify-center">
+                  <div className="relative w-32 h-12">
                     <Image
-                      src={img}
-                      alt={`${model.name} thumbnail ${index + 1}`}
+                      src={product.gambar.logo}
+                      alt={`${product.nama} logo`}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
-                  </button>
-                ))}
-              </div>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Right: Description & CTA */}
+            {/* Right: Description & Variants */}
             <div>
-              {isPromo(model) && (
-                <div className="bg-rose-50 border border-rose-200 rounded-lg p-4 mb-6">
-                  <span className="inline-block px-3 py-1 bg-rose-700 text-white text-xs font-bold rounded-full mb-2">
-                    {model.discountPercent}% OFF
-                  </span>
-                  <h3 className="font-bold text-rose-900 mb-1">{model.promoTitle}</h3>
-                  <p className="text-sm text-rose-700 mb-2">{model.promoDescription}</p>
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl font-bold text-rose-700">{model.price}</span>
-                    <span className="text-lg text-gray-400 line-through">{model.originalPrice}</span>
-                  </div>
-                  <p className="text-sm font-semibold text-rose-700 mt-2">
-                    Hemat {model.discount}!
-                  </p>
-                </div>
-              )}
-
-              {!isPromo(model) && (
-                <div className="mb-6">
-                  <p className="text-sm text-gray-600 mb-2">Mulai dari</p>
-                  <p className="text-3xl font-bold text-neutral-900 mb-2">{model.price}</p>
-                </div>
-              )}
+              {/* Price and Basic Info */}
+              <div className="mb-6">
+                <p className="text-sm text-gray-600 mb-2">Harga Varian {currentVariant.tipe}</p>
+                <p className="text-3xl sm:text-4xl font-bold text-[#e31e24] mb-2">
+                  {currentVariant.hargaFormatted}
+                </p>
+                <p className="text-sm text-gray-500">{currentVariant.rangeType}</p>
+                <p className="text-xs text-gray-400 mt-1">{product.lokasiOtr} | Update: {product.tanggalHarga}</p>
+              </div>
 
               <div className="mb-6">
                 <h3 className="font-bold text-lg mb-3">Deskripsi</h3>
-                <p className="text-gray-700 leading-relaxed">{model.description}</p>
+                <p className="text-gray-700 leading-relaxed">{product.deskripsi}</p>
               </div>
 
+              {/* Variant Selector */}
+              <div className="mb-6">
+                <h3 className="font-bold text-lg mb-3">Pilih Varian</h3>
+                <div className="space-y-2">
+                  {product.varian.map((variant, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedVariant(index)}
+                      className={`w-full flex justify-between items-center p-4 border-2 rounded-lg transition-all ${
+                        selectedVariant === index
+                          ? "border-[#e31e24] bg-rose-50"
+                          : "border-gray-200 hover:border-gray-300"
+                      }`}
+                    >
+                      <div className="text-left">
+                        <span className="font-semibold text-gray-900 block">{variant.tipe}</span>
+                        <span className="text-xs text-gray-500">{variant.rangeType}</span>
+                      </div>
+                      <span className="text-[#e31e24] font-bold">{variant.hargaFormatted}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Colors */}
               <div className="mb-6">
                 <h3 className="font-bold text-lg mb-3">Pilihan Warna</h3>
                 <div className="flex flex-wrap gap-3">
-                  {model.colors.map((color, index) => (
+                  {product.warna.map((color, index) => (
                     <div
                       key={index}
                       className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full"
@@ -211,21 +214,6 @@ export default function ModelDetailPage() {
                 </div>
               </div>
 
-              <div className="mb-6">
-                <h3 className="font-bold text-lg mb-3">Varian</h3>
-                <div className="space-y-2">
-                  {model.variants.map((variant, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between items-center p-4 border border-gray-200 rounded-lg"
-                    >
-                      <span className="font-semibold text-gray-900">{variant.name}</span>
-                      <span className="text-rose-700 font-bold">{variant.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -243,47 +231,129 @@ export default function ModelDetailPage() {
       {/* Specifications */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="section-title text-center mb-8 sm:mb-12">Spesifikasi</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {Object.entries(model.specs).map(([key, value]) => (
-              <div key={key} className="bg-white p-6 rounded-lg shadow-sm">
-                <h4 className="text-sm text-gray-500 uppercase mb-2">
-                  {key === "battery"
-                    ? "Baterai"
-                    : key === "range"
-                    ? "Jangkauan"
-                    : key === "power"
-                    ? "Tenaga"
-                    : key === "acceleration"
-                    ? "Akselerasi"
-                    : key === "charging"
-                    ? "Pengisian"
-                    : key === "seats"
-                    ? "Kapasitas"
-                    : key === "warranty"
-                    ? "Garansi"
-                    : key}
-                </h4>
-                <p className="font-bold text-lg text-neutral-900">{value}</p>
+          <h2 className="section-title text-center mb-8 sm:mb-12">Spesifikasi Teknis</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="flex items-center gap-3 mb-2">
+                <Battery className="w-6 h-6 text-[#e31e24]" />
+                <h4 className="text-sm text-gray-500 uppercase">Kapasitas Baterai</h4>
               </div>
-            ))}
+              <p className="font-bold text-xl text-neutral-900">{product.spesifikasi.kapasitasBaterai}</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="flex items-center gap-3 mb-2">
+                <Gauge className="w-6 h-6 text-[#e31e24]" />
+                <h4 className="text-sm text-gray-500 uppercase">Jarak Tempuh (NEDC)</h4>
+              </div>
+              <p className="font-bold text-xl text-neutral-900">{product.spesifikasi.jarakMengemudiNedc}</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="flex items-center gap-3 mb-2">
+                <Zap className="w-6 h-6 text-[#e31e24]" />
+                <h4 className="text-sm text-gray-500 uppercase">Daya Maksimum</h4>
+              </div>
+              <p className="font-bold text-xl text-neutral-900">{product.spesifikasi.dayaMaksimum}</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="flex items-center gap-3 mb-2">
+                <Award className="w-6 h-6 text-[#e31e24]" />
+                <h4 className="text-sm text-gray-500 uppercase">Torsi Maksimum</h4>
+              </div>
+              <p className="font-bold text-xl text-neutral-900">{product.spesifikasi.torsiMaksimum}</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="flex items-center gap-3 mb-2">
+                <Gauge className="w-6 h-6 text-[#e31e24]" />
+                <h4 className="text-sm text-gray-500 uppercase">Akselerasi 0-100 km/h</h4>
+              </div>
+              <p className="font-bold text-xl text-neutral-900">
+                {product.spesifikasi.akselerasi0100 || product.spesifikasi.akselerasi050 || "N/A"}
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border-2 border-[#e31e24]">
+              <h4 className="text-sm text-gray-500 uppercase mb-2">Garansi Baterai</h4>
+              <p className="font-bold text-lg text-neutral-900">8 Tahun / 150.000 km</p>
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+            <p className="text-sm text-blue-800">
+              <strong>Blade Battery Technology</strong> - Teknologi baterai teraman dan paling tahan lama di kelasnya
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Key Features */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="section-title text-center mb-8 sm:mb-12">Fitur Unggulan</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {model.features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-rose-700 rounded-full flex items-center justify-center mt-0.5">
-                  <Check className="w-4 h-4 text-white" />
-                </div>
-                <p className="text-gray-700">{feature}</p>
+          <h2 className="section-title text-center mb-8 sm:mb-12">Keunggulan Utama</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0 w-8 h-8 bg-[#e31e24] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-5 h-5 text-white" />
               </div>
-            ))}
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">100% Electric</h4>
+                <p className="text-sm text-gray-600">Ramah lingkungan, tanpa emisi gas buang</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0 w-8 h-8 bg-[#e31e24] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">Blade Battery</h4>
+                <p className="text-sm text-gray-600">Teknologi baterai paling aman dan efisien</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0 w-8 h-8 bg-[#e31e24] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">Biaya Operasional Rendah</h4>
+                <p className="text-sm text-gray-600">Hemat hingga 70% dibanding mobil konvensional</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0 w-8 h-8 bg-[#e31e24] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">Advanced Technology</h4>
+                <p className="text-sm text-gray-600">Dilengkapi sistem infotainment dan ADAS</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0 w-8 h-8 bg-[#e31e24] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">Fast Charging</h4>
+                <p className="text-sm text-gray-600">Pengisian cepat 30 menit (10-80%)</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="flex-shrink-0 w-8 h-8 bg-[#e31e24] rounded-full flex items-center justify-center mt-0.5">
+                <Check className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-1">Garansi Panjang</h4>
+                <p className="text-sm text-gray-600">8 tahun atau 150.000 km untuk baterai</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

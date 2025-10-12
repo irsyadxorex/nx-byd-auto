@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/navLinks";
+import { contactConfig, getWhatsAppUrl } from "@/config/contact";
 // import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
@@ -64,7 +65,7 @@ export default function Header() {
           {/* Contact Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://wa.me/6281234567890"
+              href={getWhatsAppUrl(contactConfig.whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
@@ -128,7 +129,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://wa.me/6281234567890"
+              href={getWhatsAppUrl(contactConfig.whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg mt-2"

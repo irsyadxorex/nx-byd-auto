@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { MessageCircle, ChevronUp } from "lucide-react";
+import { contactConfig, getWhatsAppUrl } from "@/config/contact";
 
 export default function FloatingActions() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -22,9 +23,7 @@ export default function FloatingActions() {
     });
   };
 
-  const whatsappNumber = "6281234567890"; // Change to your WhatsApp number
-  const whatsappMessage = "Halo, saya tertarik dengan mobil BYD. Bisakah saya mendapatkan informasi lebih lanjut?";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = getWhatsAppUrl(contactConfig.whatsappMessages.general);
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">

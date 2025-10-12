@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock } from "lucide-react";
+import { contactConfig } from "@/config/contact";
 
 export default function LocationSection() {
   return (
@@ -6,7 +7,7 @@ export default function LocationSection() {
       {/* Google Maps - Full Width */}
       <div className="w-full h-[300px] sm:h-[400px] mb-8 sm:mb-12">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1944491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonas!5e0!3m2!1sen!2sid!4v1234567890"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.86190263537!2d106.77357779357912!3d-6.206748200000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f726b5f81211%3A0x90584eaf05c1a194!2sBYD%20Harmony%20Palmerah!5e0!3m2!1sen!2sid!4v1760271596077!5m2!1sen!2sid"
           width="100%"
           height="100%"
           style={{ border: 0 }}
@@ -33,7 +34,7 @@ export default function LocationSection() {
             </div>
             <div>
               <h3 className="font-bold mb-1 text-sm sm:text-base text-neutral-900">Kunjungi Showroom</h3>
-              <p className="text-xs sm:text-sm text-gray-600">Jl. Contoh No. 123, Jakarta</p>
+              <p className="text-xs sm:text-sm text-gray-600">{contactConfig.address.fullAddress}</p>
             </div>
           </div>
           <div className="flex items-start gap-3 sm:gap-4">
@@ -42,7 +43,15 @@ export default function LocationSection() {
             </div>
             <div>
               <h3 className="font-bold mb-1 text-sm sm:text-base text-neutral-900">Hubungi Kami</h3>
-              <p className="text-xs sm:text-sm text-gray-600">+62 812-3456-7890</p>
+              <a
+                href={`tel:${contactConfig.phone.display}`}
+                className="text-xs sm:text-sm text-gray-600 hover:text-[#e31e24] transition-colors"
+              >
+                {contactConfig.phone.display}
+              </a>
+              <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5">
+                ({contactConfig.contactPerson.name} - {contactConfig.contactPerson.role})
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3 sm:gap-4">
@@ -51,7 +60,12 @@ export default function LocationSection() {
             </div>
             <div>
               <h3 className="font-bold mb-1 text-sm sm:text-base text-neutral-900">Jam Operasional</h3>
-              <p className="text-xs sm:text-sm text-gray-600">Senin - Minggu: 09.00 - 17.00</p>
+              <p className="text-xs sm:text-sm text-gray-600">
+                Senin - Jumat: {contactConfig.businessHours.weekdays}
+              </p>
+              <p className="text-xs sm:text-sm text-gray-600">
+                Sabtu - Minggu: {contactConfig.businessHours.weekend}
+              </p>
             </div>
           </div>
         </div>

@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "**.placehold.co",
       },
+      {
+        protocol: "https",
+        hostname: "www.byd.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**.byd.com",
+      },
     ],
   },
 };
