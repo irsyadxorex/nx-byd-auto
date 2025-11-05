@@ -3,22 +3,28 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import testimonialsData from "@/data/testimonials.json";
+
+// Generate array of testimonial images (1.jpg to 47.jpg)
+const testimonialImages = Array.from({ length: 46 }, (_, i) =>
+  `/images/testimoni/${i + 1}.jpg`
+);
 
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [slidesPerView, setSlidesPerView] = useState(4);
 
   // Handle responsive slides per view
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setSlidesPerView(1);
-      } else if (window.innerWidth < 1024) {
         setSlidesPerView(2);
-      } else {
+      } else if (window.innerWidth < 768) {
         setSlidesPerView(3);
+      } else if (window.innerWidth < 1024) {
+        setSlidesPerView(4);
+      } else {
+        setSlidesPerView(5);
       }
     };
 
@@ -33,7 +39,7 @@ export default function TestimonialsSection() {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => {
-        const maxSlide = testimonialsData.length - slidesPerView;
+        const maxSlide = testimonialImages.length - slidesPerView;
         return prev >= maxSlide ? 0 : prev + 1;
       });
     }, 3000);
@@ -43,7 +49,7 @@ export default function TestimonialsSection() {
 
   const nextSlide = () => {
     setCurrentSlide((prev) => {
-      const maxSlide = testimonialsData.length - slidesPerView;
+      const maxSlide = testimonialImages.length - slidesPerView;
       return prev >= maxSlide ? 0 : prev + 1;
     });
     setIsAutoPlaying(false);
@@ -51,7 +57,7 @@ export default function TestimonialsSection() {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => {
-      const maxSlide = testimonialsData.length - slidesPerView;
+      const maxSlide = testimonialImages.length - slidesPerView;
       return prev <= 0 ? maxSlide : prev - 1;
     });
     setIsAutoPlaying(false);
@@ -62,7 +68,7 @@ export default function TestimonialsSection() {
     setIsAutoPlaying(false);
   };
 
-  const maxSlide = testimonialsData.length - slidesPerView;
+  const maxSlide = testimonialImages.length - slidesPerView;
 
   return (
     <section className="pt-20 pb-10 bg-neutral-900 text-white">
@@ -92,27 +98,19 @@ export default function TestimonialsSection() {
                 transform: `translateX(-${currentSlide * (100 / slidesPerView)}%)`,
               }}
             >
-              {testimonialsData.map((testimonial, index) => (
+              {testimonialImages.map((image, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-4"
+                  className="flex-shrink-0 px-2"
                   style={{ width: `${100 / slidesPerView}%` }}
                 >
-                  <div className="text-center">
-                    <div className="relative w-full h-56 sm:h-64 mb-6 rounded-lg overflow-hidden">
-                      <Image
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="font-bold text-base sm:text-lg mb-2">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-400 italic px-4">
-                      {testimonial.quote}
-                    </p>
+                  <div className="relative w-full aspect-square rounded-lg overflow-hidden">
+                    <Image
+                      src={image}
+                      alt={`Testimoni ${index + 1}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                 </div>
               ))}
