@@ -27,6 +27,16 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "**.byd.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.denza.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**.denza.com",
+      },
     ],
   },
 };

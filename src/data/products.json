@@ -238,5 +238,38 @@
       "akselerasi050": "4.9 detik"
     },
     "warna": ["Surf Blue", "Ski White", "Pebble Grey", "Fashion Pink"]
+  },
+  {
+    "id": "denza-d9",
+    "nama": "DENZA D9",
+    "slug": "denza-d9",
+    "kategori": "MPV",
+    "tagline": "Luxury Electric MPV",
+    "url": "/id/car/denza-d9",
+    "gambar": {
+      "mobil": "https://www.denza.com/material/tengshi-overseas-site/id/home/car/D9_blue_car-2.png",
+      "logo": "https://www.denza.com/material/tengshi-overseas-site/id/brand/logo/b01-pc-brand-indentify-new1.jfif"
+    },
+    "deskripsi": "DENZA D9 is based on BYD's proprietary e-platform 3.0, our power system features an 8in1 electric motor, wide temperature range heat pump system and efficient blade battery.",
+    "varian": [
+      {
+        "tipe": "Luxury",
+        "rangeType": "7 Seater",
+        "harga": 950000000,
+        "hargaFormatted": "Rp 950.000.000"
+      }
+    ],
+    "hargaMulai": 950000000,
+    "hargaMulaiFormatted": "Mulai dari Rp 950 Juta",
+    "lokasiOtr": "OTR Jakarta",
+    "tanggalHarga": "25 November 2025",
+    "spesifikasi": {
+      "torsiMaksimum": "360 N.m",
+      "dayaMaksimum": "275 kW",
+      "jarakMengemudiNedc": "600 km",
+      "kapasitasBaterai": "103.36 kWh",
+      "akselerasi0100": "6.9 detik"
+    },
+    "warna": ["Royal Blue", "Pearl White", "Cosmos Black", "Silver Metallic"]
   }
 ]
