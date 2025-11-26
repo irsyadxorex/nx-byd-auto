@@ -79,8 +79,8 @@
     "tagline": "Electric Performance Sedan",
     "url": "/id/car/seal",
     "gambar": {
-      "mobil": "https://www.byd.com/content/dam/byd-site/id/pricelist/seal-fix.png",
-      "logo": "https://www.byd.com/content/dam/byd-site/id/pricelist/seal-logo-black-new.png"
+      "mobil": "/images/models/seal-fix.png",
+      "logo": "/images/models/seal-logo-black-new.png"
     },
     "deskripsi": "BYD Seal adalah sedan listrik premium dengan performa tinggi yang menggabungkan teknologi canggih, desain aerodinamis, dan kenyamanan berkendara kelas dunia.",
     "varian": [
@@ -118,8 +118,8 @@
     "tagline": "Premium Electric SUV",
     "url": "/id/car/atto3",
     "gambar": {
-      "mobil": "https://www.byd.com/content/dam/byd-site/id/pricelist/atto3-white-fix.png",
-      "logo": "https://www.byd.com/content/dam/byd-site/id/pricelist/atto3-logo-black-new.png"
+      "mobil": "/images/models/atto3-white-fix.png",
+      "logo": "/images/models/atto3-logo-black-new.png"
     },
     "deskripsi": "BYD Atto 3 adalah SUV listrik yang sempurna untuk keluarga Indonesia modern. Dengan desain sporty yang memikat dan ruang kabin luas.",
     "varian": [
@@ -157,8 +157,8 @@
     "tagline": "Compact Electric Hatchback",
     "url": "/id/car/dolphin",
     "gambar": {
-      "mobil": "https://www.byd.com/content/dam/byd-site/id/pricelist/dolphin-fix.png",
-      "logo": "https://www.byd.com/content/dam/byd-site/id/pricelist/dolphin-logo-black-new.png"
+      "mobil": "/images/models/dolphin-fix.png",
+      "logo": "/images/models/dolphin-logo-black-new.png"
     },
     "deskripsi": "BYD Dolphin adalah hatchback listrik kompak yang sempurna untuk mobilitas urban. Dengan desain cute & modern dan teknologi canggih.",
     "varian": [
@@ -196,8 +196,8 @@
     "tagline": "Electric Family MPV",
     "url": "/id/car/m6",
     "gambar": {
-      "mobil": "https://www.byd.com/content/dam/byd-site/id/pricelist/m6-blue-fix-fixed.png",
-      "logo": "https://www.byd.com/content/dam/byd-site/id/pricelist/m6-logo-black-new.png"
+      "mobil": "/images/models/m6-blue-fix-fixed.png",
+      "logo": "/images/models/m6-logo-black-new.png"
     },
     "deskripsi": "BYD M6 adalah MPV listrik yang dirancang khusus untuk keluarga besar Indonesia. Dengan kabin lega dan teknologi Blade Battery.",
     "varian": [
@@ -241,8 +241,8 @@
     "tagline": "Luxury Electric SUV",
     "url": "/id/car/sealion7",
     "gambar": {
-      "mobil": "https://www.byd.com/content/dam/byd-site/id/pricelist/sealion7-2.png",
-      "logo": "https://www.byd.com/content/dam/byd-site/id/pricelist/sealion-logo-black.png"
+      "mobil": "/images/models/sealion7-2.png",
+      "logo": "/images/models/sealion-logo-black.png"
     },
     "deskripsi": "BYD Sealion 7 adalah SUV listrik premium dengan teknologi terdepan dan performa luar biasa untuk pengalaman berkendara yang tak tertandingi.",
     "varian": [
