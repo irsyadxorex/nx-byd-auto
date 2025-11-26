@@ -1,5 +1,77 @@
 [
   {
+    "id": "byd-atto-1",
+    "nama": "BYD Atto 1",
+    "slug": "byd-atto-1",
+    "kategori": "Hatchback",
+    "tagline": "Affordable Electric City Car",
+    "url": "/id/car/atto1",
+    "gambar": {
+      "mobil": "/images/models/atto1.png",
+      "logo": "/images/models/atto1-logo-black-new.png"
+    },
+    "deskripsi": "BYD Atto 1 adalah city car listrik terjangkau yang sempurna untuk mobilitas perkotaan dengan efisiensi tinggi dan fitur modern.",
+    "varian": [
+      {
+        "tipe": "Dynamic",
+        "rangeType": "Standard Range",
+        "harga": 199000000,
+        "hargaFormatted": "Rp 195.000.000"
+      },
+      {
+        "tipe": "Premium",
+        "rangeType": "Long Range",
+        "harga": 235000000,
+        "hargaFormatted": "Rp 235.000.000"
+      }
+    ],
+    "hargaMulai": 195000000,
+    "hargaMulaiFormatted": "Mulai dari Rp 195 Juta",
+    "lokasiOtr": "OTR Jakarta",
+    "tanggalHarga": "24 Juli 2025",
+    "spesifikasi": {
+      "torsiMaksimum": "135 N.m",
+      "dayaMaksimum": "55 kW",
+      "jarakMengemudiNedc": "300 km",
+      "kapasitasBaterai": "30.08 kWh",
+      "akselerasi050": "4.9 detik"
+    },
+    "warna": ["Surf Blue", "Ski White", "Pebble Grey", "Fashion Pink"]
+  },
+  {
+    "id": "denza-d9",
+    "nama": "DENZA D9",
+    "slug": "denza-d9",
+    "kategori": "MPV",
+    "tagline": "Luxury Electric MPV",
+    "url": "/id/car/denza-d9",
+    "gambar": {
+      "mobil": "/images/models/denza-D9-blue-car.webp",
+      "logo": "/images/models/denza-logo.png"
+    },
+    "deskripsi": "DENZA D9 is based on BYD's proprietary e-platform 3.0, our power system features an 8in1 electric motor, wide temperature range heat pump system and efficient blade battery.",
+    "varian": [
+      {
+        "tipe": "Luxury",
+        "rangeType": "7 Seater",
+        "harga": 950000000,
+        "hargaFormatted": "Rp 950.000.000"
+      }
+    ],
+    "hargaMulai": 950000000,
+    "hargaMulaiFormatted": "Mulai dari Rp 950 Juta",
+    "lokasiOtr": "OTR Jakarta",
+    "tanggalHarga": "25 November 2025",
+    "spesifikasi": {
+      "torsiMaksimum": "360 N.m",
+      "dayaMaksimum": "275 kW",
+      "jarakMengemudiNedc": "600 km",
+      "kapasitasBaterai": "103.36 kWh",
+      "akselerasi0100": "6.9 detik"
+    },
+    "warna": ["Royal Blue", "Pearl White", "Cosmos Black", "Silver Metallic"]
+  },
+  {
     "id": "byd-seal",
     "nama": "BYD Seal",
     "slug": "byd-seal",
@@ -199,77 +271,5 @@
       "akselerasi0100": "6.7 detik"
     },
     "warna": ["Cosmos Black", "Atlantis Grey", "Ski White", "Ocean Blue"]
-  },
-  {
-    "id": "byd-atto-1",
-    "nama": "BYD Atto 1",
-    "slug": "byd-atto-1",
-    "kategori": "Hatchback",
-    "tagline": "Affordable Electric City Car",
-    "url": "/id/car/atto1",
-    "gambar": {
-      "mobil": "https://www.byd.com/content/dam/byd-site/id/pricelist/dolphin-fix.png",
-      "logo": "https://www.byd.com/content/dam/byd-site/id/pricelist/dolphin-logo-black-new.png"
-    },
-    "deskripsi": "BYD Atto 1 adalah city car listrik terjangkau yang sempurna untuk mobilitas perkotaan dengan efisiensi tinggi dan fitur modern.",
-    "varian": [
-      {
-        "tipe": "Dynamic",
-        "rangeType": "Standard Range",
-        "harga": 195000000,
-        "hargaFormatted": "Rp 195.000.000"
-      },
-      {
-        "tipe": "Premium",
-        "rangeType": "Long Range",
-        "harga": 235000000,
-        "hargaFormatted": "Rp 235.000.000"
-      }
-    ],
-    "hargaMulai": 195000000,
-    "hargaMulaiFormatted": "Mulai dari Rp 195 Juta",
-    "lokasiOtr": "OTR Jakarta",
-    "tanggalHarga": "24 Juli 2025",
-    "spesifikasi": {
-      "torsiMaksimum": "135 N.m",
-      "dayaMaksimum": "55 kW",
-      "jarakMengemudiNedc": "300 km",
-      "kapasitasBaterai": "30.08 kWh",
-      "akselerasi050": "4.9 detik"
-    },
-    "warna": ["Surf Blue", "Ski White", "Pebble Grey", "Fashion Pink"]
-  },
-  {
-    "id": "denza-d9",
-    "nama": "DENZA D9",
-    "slug": "denza-d9",
-    "kategori": "MPV",
-    "tagline": "Luxury Electric MPV",
-    "url": "/id/car/denza-d9",
-    "gambar": {
-      "mobil": "https://www.denza.com/material/tengshi-overseas-site/id/home/car/D9_blue_car-2.png",
-      "logo": "https://www.denza.com/material/tengshi-overseas-site/id/brand/logo/b01-pc-brand-indentify-new1.jfif"
-    },
-    "deskripsi": "DENZA D9 is based on BYD's proprietary e-platform 3.0, our power system features an 8in1 electric motor, wide temperature range heat pump system and efficient blade battery.",
-    "varian": [
-      {
-        "tipe": "Luxury",
-        "rangeType": "7 Seater",
-        "harga": 950000000,
-        "hargaFormatted": "Rp 950.000.000"
-      }
-    ],
-    "hargaMulai": 950000000,
-    "hargaMulaiFormatted": "Mulai dari Rp 950 Juta",
-    "lokasiOtr": "OTR Jakarta",
-    "tanggalHarga": "25 November 2025",
-    "spesifikasi": {
-      "torsiMaksimum": "360 N.m",
-      "dayaMaksimum": "275 kW",
-      "jarakMengemudiNedc": "600 km",
-      "kapasitasBaterai": "103.36 kWh",
-      "akselerasi0100": "6.9 detik"
-    },
-    "warna": ["Royal Blue", "Pearl White", "Cosmos Black", "Silver Metallic"]
   }
 ]
